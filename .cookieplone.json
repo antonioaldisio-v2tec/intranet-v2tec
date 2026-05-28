@@ -1,0 +1,22 @@
+{
+    "github_organization": "ericof",
+    "hostname": "intranet.v2solucoes.com.br",
+    "title": "Intranet V2Tec",
+    "description": "Intranet utilizando Plone 6.2",
+    "volto_version": "19.0.0",
+    "use_prerelease_versions": false,
+    "language_code": "pt-br",
+    "initialize_documentation": false,
+    "devops_cache": false,
+    "container_registry": "github",
+    "devops_storage": "relstorage",
+    "plone_version": "6.2.0",
+    "author": "\u00c9rico Andrei",
+    "frontend_addon_name": "volto-v2tec-intranet",
+    "project_slug": "intranet-v2tec",
+    "devops_ansible": false,
+    "python_package_name": "v2tec.intranet",
+    "devops_gha_deploy": false,
+    "email": "ericof@simplesconsultoria.com.br",
+    "__template__": "project"
+}
