@@ -12,9 +12,9 @@ class TestPloneSite:
         expected = "internal"
         # Obtem estado de workflow do Plone Site
         value = api.content.get_state(portal)
-        assert (
-            value == expected
-        ), f"Estado de workflow é {value}, esperávamos {expected}"
+        assert value == expected, (
+            f"Estado de workflow é {value}, esperávamos {expected}"
+        )
 
     @pytest.mark.parametrize(
         "permission,expected",
@@ -28,6 +28,6 @@ class TestPloneSite:
         with api.env.adopt_user(user=nobody):
             user = api.user.get_current()
             has_permission = api.user.has_permission(permission, user=user, obj=portal)
-            assert (
-                has_permission is expected
-            ), f"Erro: Permissão {permission} para usuário Anônimo: {has_permission}"
+            assert has_permission is expected, (
+                f"Erro: Permissão {permission} para usuário Anônimo: {has_permission}"
+            )
