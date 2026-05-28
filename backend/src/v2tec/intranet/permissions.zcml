@@ -1,5 +1,16 @@
-<configure xmlns="http://namespaces.zope.org/zope">
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="v2tec.intranet"
+    >
 
-  <!-- -*- extra stuff goes here -*- -->
+  <configure zcml:condition="installed AccessControl.security">
+
+    <permission
+        id="v2tec.intranet.area.add"
+        title="v2tec.intranet: Add Area"
+        />
+
+  </configure>
 
 </configure>
