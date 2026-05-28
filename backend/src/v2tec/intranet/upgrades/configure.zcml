@@ -3,7 +3,6 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     >
 
-  <!-- Example upgrade step
   <genericsetup:upgradeSteps
       profile="v2tec.intranet:default"
       source="1000"
@@ -14,8 +13,20 @@
         import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>
-  -->
 
-  <!-- -*- extra stuff goes here -*- -->
+  <genericsetup:upgradeSteps
+      profile="v2tec.intranet:default"
+      source="20260527001"
+      destination="20260528001"
+      >
+    <genericsetup:upgradeDepends
+        title="Fecha a intranet"
+        import_steps="workflow"
+        />
+    <upgradeStep
+        title="Atualiza o permissionamento com o novo workflow"
+        handler=".workflow.atualiza_permissoes"
+        />
+  </genericsetup:upgradeSteps>
 
 </configure>
