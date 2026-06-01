@@ -1,0 +1,8 @@
+.endereco-info {
+  padding: $spacing-small;
+  border: 2px solid;
+  border-radius: 5px;
+  .label {
+    @include body-text-bold();
+  }
+}
