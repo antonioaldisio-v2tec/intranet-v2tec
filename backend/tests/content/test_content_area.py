@@ -19,7 +19,20 @@ def area_payload() -> dict:
         "title": "Tecnologia da Informação",
         "description": ("Área responsável por TI"),
         "email": "ti@v2solucoes.com.br",
-        "telefone": "(61) 3210.1234",
+        "telefone": "6132101234",
+    }
+
+
+@pytest.fixture
+def area_restapi_payload() -> dict:
+    """Return a payload to create a new area."""
+    return {
+        "@type": "Area",
+        "id": "ti",
+        "title": "Tecnologia da Informação",
+        "description": ("Área responsável por TI"),
+        "email": "ti@v2solucoes.com.br",
+        "telefone": "6132101234",
     }
 
 
@@ -74,3 +87,51 @@ class TestArea:
             else:
                 with pytest.raises(Unauthorized):
                     api.content.create(container=self.portal, **area_payload)
+
+
+class TestAreaFunctional:
+    @pytest.fixture(autouse=True)
+    def _setup(self, functional_portal, manager_request):
+        self.portal = functional_portal
+        self.request = manager_request
+
+    @pytest.mark.parametrize(
+        "fieldname,type_,fieldset",
+        [
+            ["email", "string", "contato"],
+            ["telefone", "string", "contato"],
+            ["endereco", "string", "endereco"],
+            ["complemento", "string", "endereco"],
+            ["cidade", "string", "endereco"],
+            ["estado", "string", "endereco"],
+            ["cep", "string", "endereco"],
+        ],
+    )
+    def test_fields(self, fieldname: str, type_: str, fieldset: str):
+        response = self.request.get(f"/@types/{CONTENT_TYPE}")
+        assert response.status_code == 200
+        data = response.json()
+        field = data["properties"].get(fieldname)
+        assert field is not None
+        assert field["type"] == type_
+        fieldsets = [fs for fs in data["fieldsets"] if fs["id"] == fieldset]
+        assert fieldsets, f"Fieldset '{fieldset}' not found"
+        assert fieldname in fieldsets[0]["fields"]
+
+    @pytest.mark.parametrize(
+        "email,valid",
+        [
+            ["foo@plone.org", False],
+            ["foo@v2solucoes.com.br", True],
+        ],
+    )
+    def test_validate_email(self, area_restapi_payload, email: str, valid: bool):
+        area_restapi_payload["email"] = email
+        response = self.request.post("/", json=area_restapi_payload)
+        data = response.json()
+        if valid:
+            assert response.status_code == 201
+            assert data["email"] == email
+        else:
+            assert response.status_code == 400
+            assert "email" in data["message"]
