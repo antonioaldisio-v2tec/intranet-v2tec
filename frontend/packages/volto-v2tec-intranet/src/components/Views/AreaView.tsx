@@ -1,17 +1,16 @@
 import React from 'react';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
-import { Container } from '@plone/components';
+import { hasBlocksData } from '@plone/volto/helpers/Blocks/Blocks';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import type { Area } from '../../types/content';
-import ContactInfo from 'volto-v2tec-intranet/components/ContactInfo/ContactInfo';
-import EnderecoInfo from 'volto-v2tec-intranet/components/EnderecoInfo/EnderecoInfo';
+import ContactInfo from '../ContactInfo/ContactInfo';
+import EnderecoInfo from '../EnderecoInfo/EnderecoInfo';
 
 interface AreaViewProps {
-  content: Area;
+  content: Record<string, unknown>;
   location?: {
     pathname: string;
   };
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 const AreaView: React.FC<AreaViewProps> = (props) => {
@@ -19,11 +18,13 @@ const AreaView: React.FC<AreaViewProps> = (props) => {
   const path = getBaseUrl(location?.pathname || '');
 
   return (
-    <Container id="page-document" className="view-wrapper area-view">
-      <RenderBlocks {...props} path={path} />
+    <div id="page-document" className="view-wrapper area-view">
+      {hasBlocksData(content) ? (
+        <RenderBlocks {...props} path={path} />
+      ) : null}
       <ContactInfo content={content} />
       <EnderecoInfo content={content} />
-    </Container>
+    </div>
   );
 };
 

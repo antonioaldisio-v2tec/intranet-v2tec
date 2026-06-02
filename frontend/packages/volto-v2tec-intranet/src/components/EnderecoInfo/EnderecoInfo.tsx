@@ -1,47 +1,54 @@
 import React from 'react';
-import { Container } from '@plone/components';
-import type { Area } from 'volto-v2tec-intranet/types/content';
+import { textValue } from '../../utils/textValue';
 
 interface EnderecoInfoProps {
-  content: Area;
+  content: Record<string, unknown>;
 }
 
 const EnderecoInfo: React.FC<EnderecoInfoProps> = ({ content }) => {
-  const { endereco, complemento, cidade, estado, cep } = content;
+  const endereco = textValue(content.endereco);
+  const complemento = textValue(content.complemento);
+  const cidade = textValue(content.cidade);
+  const estado = textValue(content.estado);
+  const cep = textValue(content.cep);
+
+  if (!endereco && !complemento && !cidade && !estado && !cep) {
+    return null;
+  }
 
   return (
-    <Container narrow className="endereco-info">
-      {endereco && (
-        <Container className="endereco">
+    <section className="endereco-info">
+      {endereco ? (
+        <p className="endereco">
           <span className="label">Endereço</span>:{' '}
           <span className="value">{endereco}</span>
-        </Container>
-      )}
-      {complemento && (
-        <Container className="complemento">
+        </p>
+      ) : null}
+      {complemento ? (
+        <p className="complemento">
           <span className="label">Complemento</span>:{' '}
           <span className="value">{complemento}</span>
-        </Container>
-      )}
-      {cidade && (
-        <Container className="cidade">
+        </p>
+      ) : null}
+      {cidade ? (
+        <p className="cidade">
           <span className="label">Cidade</span>:{' '}
           <span className="value">{cidade}</span>
-        </Container>
-      )}
-      {estado && (
-        <Container className="estado">
+        </p>
+      ) : null}
+      {estado ? (
+        <p className="estado">
           <span className="label">Estado</span>:{' '}
           <span className="value">{estado}</span>
-        </Container>
-      )}
-      {cep && (
-        <Container className="cep">
+        </p>
+      ) : null}
+      {cep ? (
+        <p className="cep">
           <span className="label">CEP</span>:{' '}
           <span className="value">{cep}</span>
-        </Container>
-      )}
-    </Container>
+        </p>
+      ) : null}
+    </section>
   );
 };
 
