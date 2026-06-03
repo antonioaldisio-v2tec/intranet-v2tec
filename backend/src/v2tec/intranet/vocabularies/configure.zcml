@@ -9,5 +9,9 @@
       name="v2tec.intranet.vocabulary.categorias"
       component=".categorias.vocab_categorias"
       />
+  <utility
+      name="v2tec.intranet.vocabulary.areas"
+      component=".areas.vocab_areas"
+      />
 
 </configure>
