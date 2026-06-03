@@ -1,3 +1,3 @@
 # Contributors
 
-- Érico Andrei [ericof@simplesconsultoria.com.br]
+- Antonio Alidsio[antonioaldisio-v2tec@v2solucoes.com.br]

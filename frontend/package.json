@@ -2,8 +2,8 @@
   "name": "volto-v2tec-intranet-dev",
   "version": "1.0.0-alpha.0",
   "description": "Intranet utilizando Plone 6.2",
-  "author": "Érico Andrei",
-  "homepage": "https://github.com/ericof/intranet-v2tec",
+  "author": "antonioaldisio",
+  "homepage": "https://github.com/antonioaldisio-v2tec/intranet-v2tec",
   "license": "MIT",
   "keywords": [
     "volto-addon",

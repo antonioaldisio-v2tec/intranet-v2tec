@@ -11,7 +11,7 @@ See [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/).
 ### Step 1: Add the deployment environment variables
 
 1.  Visit [GitLab](https://gitlab.com/), or your organization's GitLab instance, and log in with your credentials.
-2.  Go to your repository at [ericof/intranet-v2tec](https://gitlab.com/ericof/intranet-v2tec).
+2.  Go to your repository at [antonioaldisio-v2tec/intranet-v2tec](https://gitlab.com/antonioaldisio-v2tec/intranet-v2tec).
     Note that you might need to adjust the URL's host name to your organization's.
 3.  Click on `Settings` at the left menu and select `CI/CD`.
 4.  Expand the `Variables`.

@@ -23,10 +23,10 @@ EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
-LABEL maintainer="Érico Andrei <ericof@simplesconsultoria.com.br>" \
+LABEL maintainer="antonioaldisio <antonioaldisio-v2tec@simplesconsultoria.com.br>" \
       org.label-schema.name="intranet-v2tec-frontend" \
       org.label-schema.description="Intranet V2Tec frontend image." \
-      org.label-schema.vendor="Érico Andrei"
+      org.label-schema.vendor="antonioaldisio"
 
 COPY --from=builder /app/ /app/
 

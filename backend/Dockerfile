@@ -41,10 +41,10 @@ EOT
 
 FROM plone/server-prod-config:uv-${PYTHON_VERSION}
 
-LABEL maintainer="Érico Andrei <ericof@simplesconsultoria.com.br>" \
+LABEL maintainer="Antonio Aldisio <antonioaldantoniofilho@v2solucoes.com.br>" \
       org.label-schema.name="intranet-v2tec-backend" \
       org.label-schema.description="Intranet V2Tec backend image." \
-      org.label-schema.vendor="Érico Andrei"
+      org.label-schema.vendor="Antonio Aldisio"
 
 # Copy the pre-built `/app` directory to the runtime container
 # and change the ownership to user app and group app in one step.

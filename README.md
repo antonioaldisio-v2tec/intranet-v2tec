@@ -2,7 +2,7 @@
 
 [![Built with Cookieplone](https://img.shields.io/badge/built%20with-Cookieplone-0083be.svg?logo=cookiecutter)](https://github.com/plone/cookieplone-templates/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![CI](https://github.com/ericof/intranet-v2tec/actions/workflows/main.yml/badge.svg)](https://github.com/ericof/intranet-v2tec/actions/workflows/main.yml)
+[![CI](https://github.com/antonioaldisio-v2tec/intranet-v2tec/actions/workflows/main.yml/badge.svg)](https://github.com/antonioaldisio-v2tec/intranet-v2tec/actions/workflows/main.yml)
 
 Intranet utilizando Plone 6.2
 
@@ -24,7 +24,7 @@ Intranet utilizando Plone 6.2
 1.  Clone this repository, then change your working directory.
 
     ```shell
-    git clone git@github.com:ericof/intranet-v2tec.git
+    git clone git@github.com:antonioaldisio-v2tec/intranet-v2tec.git
     cd intranet-v2tec
     ```
 

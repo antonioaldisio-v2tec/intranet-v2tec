@@ -22,8 +22,8 @@ make create-site
 
 ## Contribute
 
-- [Issue tracker](https://github.com/ericof/intranet-v2tec/issues)
-- [Source code](https://github.com/ericof/intranet-v2tec/)
+- [Issue tracker](https://github.com/antonioaldisio-v2tec/intranet-v2tec/issues)
+- [Source code](https://github.com/antonioaldisio-v2tec/intranet-v2tec/)
 
 ### Prerequisites ✅
 
@@ -38,7 +38,7 @@ make create-site
 1.  Clone this repository.
 
     ```shell
-    git clone git@github.com:ericof/intranet-v2tec.git
+    git clone git@github.com:antonioaldisio-v2tec/intranet-v2tec.git
     cd intranet-v2tec/backend
     ```
 

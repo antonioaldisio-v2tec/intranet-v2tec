@@ -24,10 +24,10 @@ EOT
 
 FROM plone/server-acceptance:${PLONE_VERSION}
 
-LABEL maintainer="Érico Andrei <ericof@simplesconsultoria.com.br>" \
+LABEL maintainer="antonioaldisio <antonioaldisio-v2tec@simplesconsultoria.com.br>" \
       org.label-schema.name="intranet-v2tec-acceptance" \
       org.label-schema.description="Intranet V2Tec backend acceptance image." \
-      org.label-schema.vendor="Érico Andrei"
+      org.label-schema.vendor="antonioaldisio"
 
 ENV CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,v2tec.intranet"
 ENV APPLY_PROFILES="v2tec.intranet:default"

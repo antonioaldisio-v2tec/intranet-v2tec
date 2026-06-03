@@ -3,8 +3,8 @@
 Intranet utilizando Plone 6.2
 
 [![npm](https://img.shields.io/npm/v/volto-v2tec-intranet)](https://www.npmjs.com/package/volto-v2tec-intranet)
-[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://ericof.github.io/volto-v2tec-intranet/)
-[![CI](https://github.com/ericof/intranet-v2tec/actions/workflows/main.yml/badge.svg)](https://github.com/ericof/intranet-v2tec/actions/workflows/main.yml)
+[![](https://img.shields.io/badge/-Storybook-ff4785?logo=Storybook&logoColor=white&style=flat-square)](https://antonioaldisio-v2tec.github.io/volto-v2tec-intranet/)
+[![CI](https://github.com/antonioaldisio-v2tec/intranet-v2tec/actions/workflows/main.yml/badge.svg)](https://github.com/antonioaldisio-v2tec/intranet-v2tec/actions/workflows/main.yml)
 
 
 ## Features
@@ -98,7 +98,7 @@ For these reasons, it only works with pnpm and Volto 18.
 1.  Clone this repository, then change your working directory.
 
     ```shell
-    git clone git@github.com:ericof/intranet-v2tec.git
+    git clone git@github.com:antonioaldisio-v2tec/intranet-v2tec.git
     cd intranet-v2tec/frontend
     ```
 

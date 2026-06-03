@@ -55,7 +55,7 @@ services:
       - --providers.docker.network=intranet-v2solucoes-com-br_nw-internal
       - --entrypoints.http.address=:80
       - --entrypoints.https.address=:443
-      - --certificatesresolvers.le.acme.email=ericof@simplesconsultoria.com.br
+      - --certificatesresolvers.le.acme.email=antonioaldisio-v2tec@simplesconsultoria.com.br
       - --certificatesresolvers.le.acme.storage=/certificates/acme.json
       - --certificatesresolvers.le.acme.tlschallenge=true
       - --accesslog

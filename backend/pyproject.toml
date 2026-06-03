@@ -6,7 +6,7 @@ readme = "README.md"
 license = "GPL-2.0-only"
 requires-python = ">=3.13"
 authors = [
-    { name = "Érico Andrei", email = "ericof@simplesconsultoria.com.br" },
+    { name = "Antonio Aldisio", email = "antonioaldisio-v2tec@v2solucoes.com.br" },
 ]
 keywords = [
     "CMS",
@@ -48,10 +48,10 @@ container = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ericof/intranet-v2tec"
+Homepage = "https://github.com/antonioaldisio-v2tec/intranet-v2tec"
 PyPI = "https://pypi.org/project/v2tec.intranet"
-Source = "https://github.com/ericof/intranet-v2tec"
-Tracker = "https://github.com/ericof/intranet-v2tec/issues"
+Source = "https://github.com/antonioaldisio-v2tec/intranet-v2tec"
+Tracker = "https://github.com/antonioaldisio-v2tec/intranet-v2tec/issues"
 
 
 [project.entry-points."plone.autoinclude.plugin"]
@@ -532,7 +532,7 @@ filename = "CHANGELOG.md"
 start_string = "<!-- towncrier release notes start -->\n"
 title_format = "## {version} ({project_date})"
 template = "news/.changelog_template.jinja"
-issue_format = "[#{issue}](https://github.com/ericof/intranet-v2tec/issues/{issue})"
+issue_format = "[#{issue}](https://github.com/antonioaldisio-v2tec/intranet-v2tec/issues/{issue})"
 underlines = ["", "", ""]
 
 [[tool.towncrier.type]]

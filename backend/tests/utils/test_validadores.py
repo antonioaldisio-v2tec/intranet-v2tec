@@ -12,7 +12,7 @@ import pytest
         ["1@v2solucoes.com.br.br", False],
         ["foobar@v2solucoes.com.br.br", False],
         ["bar-foo@v2solucoes.com.br.br", False],
-        ["ericof@simplesconsultoria.com.br", False],
+        ["antonioaldisio-v2tec@simplesconsultoria.com.br", False],
     ],
 )
 def test_is_valid_email(value: str, expected: bool):

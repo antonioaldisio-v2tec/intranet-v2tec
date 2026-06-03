@@ -10,11 +10,11 @@
     "plone",
     "react"
   ],
-  "author": "Érico Andrei",
-  "homepage": "https://github.com/ericof/intranet-v2tec#readme",
+  "author": "antonioaldisio",
+  "homepage": "https://github.com/antonioaldisio-v2tec/intranet-v2tec#readme",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ericof/intranet-v2tec"
+    "url": "git@github.com:antonioaldisio-v2tec/intranet-v2tec"
   },
   "publishConfig": {
     "access": "public"
