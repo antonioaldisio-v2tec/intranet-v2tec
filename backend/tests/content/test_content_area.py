@@ -135,3 +135,22 @@ class TestAreaFunctional:
         else:
             assert response.status_code == 400
             assert "email" in data["message"]
+
+
+    @pytest.mark.parametrize(
+        "behavior",
+        [
+            "plone.basic",
+            "plone.namefromtitle",
+            "plone.shortname",
+            "plone.excludefromnavigation",
+            "plone.versioning",
+            "v2tec.intranet.behavior.contato",
+            "v2tec.intranet.behavior.endereco",
+            "volto.blocks",
+            "plone.constraintypes",
+            "volto.preview_image",
+        ],
+    )
+    def test_has_behavior(self, get_behaviors, behavior):
+        assert behavior in get_behaviors(CONTENT_TYPE)
