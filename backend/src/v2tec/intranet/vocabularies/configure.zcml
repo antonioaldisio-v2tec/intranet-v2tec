@@ -5,5 +5,9 @@
       provides="zope.schema.interfaces.IVocabularyFactory"
       name="v2tec.intranet.vocabulary.estados"
       />
+  <utility
+      name="v2tec.intranet.vocabulary.categorias"
+      component=".categorias.vocab_categorias"
+      />
 
 </configure>
