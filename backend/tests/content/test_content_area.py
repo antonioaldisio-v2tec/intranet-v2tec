@@ -136,7 +136,6 @@ class TestAreaFunctional:
             assert response.status_code == 400
             assert "email" in data["message"]
 
-
     @pytest.mark.parametrize(
         "behavior",
         [

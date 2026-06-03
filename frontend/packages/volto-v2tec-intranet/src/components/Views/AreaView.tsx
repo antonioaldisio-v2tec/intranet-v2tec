@@ -19,9 +19,7 @@ const AreaView: React.FC<AreaViewProps> = (props) => {
 
   return (
     <div id="page-document" className="view-wrapper area-view">
-      {hasBlocksData(content) ? (
-        <RenderBlocks {...props} path={path} />
-      ) : null}
+      {hasBlocksData(content) ? <RenderBlocks {...props} path={path} /> : null}
       <ContactInfo content={content} />
       <EnderecoInfo content={content} />
     </div>

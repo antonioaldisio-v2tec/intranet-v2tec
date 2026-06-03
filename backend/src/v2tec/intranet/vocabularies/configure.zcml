@@ -1,9 +1,9 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
   <utility
+      factory=".estados.EstadosVocabularyFactory"
       provides="zope.schema.interfaces.IVocabularyFactory"
       name="v2tec.intranet.vocabulary.estados"
-      factory=".estados.EstadosVocabularyFactory"
       />
 
 </configure>
