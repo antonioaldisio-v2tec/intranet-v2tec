@@ -69,6 +69,20 @@
         import_steps="rolemap"
         />
   </genericsetup:upgradeSteps>
+  <genericsetup:upgradeSteps
+      profile="v2tec.intranet:default"
+      source="20260602002"
+      destination="20260608001"
+      >
+    <genericsetup:upgradeDepends
+        title="Indexa os campos Area e Categoria "
+        import_steps="catalog"
+        />
+    <upgradeStep
+        title="Reindexa o tipo Pessoa"
+        handler=".catalog.reindexa_pessoa"
+        />
+  </genericsetup:upgradeSteps>
 
   <!-- -*- extra stuff goes here -*- -->
 
