@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="v2tec.intranet"
+>
+
+  <!-- Area -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.area"
+  >
+    <value key="title"
+           i18n:translate="label_area"
+    >Área</value>
+    <value key="description"
+           i18n:translate="description_area"
+    >Filtrar por Área.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="group"
+           i18n:translate=""
+    >Intranet</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="vocabulary">v2tec.intranet.vocabulary.areas</value>
+  </records>
+
+  <!-- Categoria -->
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.categoria"
+  >
+    <value key="title"
+           i18n:translate="label_categoria"
+    >Categoria</value>
+    <value key="description"
+           i18n:translate="description_categoria"
+    >Filtrar por categoria.</value>
+    <value key="enabled">True</value>
+    <value key="sortable">False</value>
+    <value key="group"
+           i18n:translate=""
+    >Intranet</value>
+    <value key="operations">
+      <element>plone.app.querystring.operation.selection.any</element>
+    </value>
+    <value key="vocabulary">v2tec.intranet.vocabulary.categorias</value>
+  </records>
+
+</registry>
