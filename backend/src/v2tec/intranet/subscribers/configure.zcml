@@ -1,6 +1,11 @@
 <configure xmlns="http://namespaces.zope.org/zope">
 
   <subscriber
+      for="zope.interface.interfaces.IObjectEvent"
+      handler=".events.log_object_event"
+      />
+
+  <subscriber
       for="v2tec.intranet.content.area.IArea
            zope.lifecycleevent.IObjectAddedEvent"
       handler=".area.area_added"
