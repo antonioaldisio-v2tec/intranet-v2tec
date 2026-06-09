@@ -1180,6 +1180,22 @@ wheels = [
 ]
 
 [[package]]
+name = "kitconcept-voltolighttheme"
+version = "8.0.0a28"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "plonegovbr-socialmedia" },
+    { name = "products-cmfplone" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3f/50/d9ed32d19561c6f6931e400b83852150fd96921fc6aa234e7e82af94ffba/kitconcept_voltolighttheme-8.0.0a28.tar.gz", hash = "sha256:ffce22fe477f0be11d108458ade4828fc59b8d6c09830653fdb2b0375f4796fe", size = 1366959, upload-time = "2026-05-15T10:35:57.644Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/78/03/bc3901f2ab833f058c68ab58f53d548654134b444cda034bd21e7b6365e1/kitconcept_voltolighttheme-8.0.0a28-py3-none-any.whl", hash = "sha256:6880d08a8a704f6d08381f078f68a5dc0910c605750a70f320526faa93eca620", size = 1435278, upload-time = "2026-05-15T10:35:59.418Z" },
+]
+
+[[package]]
 name = "legacy-cgi"
 version = "2.6.4"
 source = { registry = "https://pypi.org/simple" }
@@ -3437,6 +3453,22 @@ wheels = [
 ]
 
 [[package]]
+name = "plonegovbr-socialmedia"
+version = "3.0.0a0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "plone-api" },
+    { name = "plone-exportimport" },
+    { name = "plone-restapi" },
+    { name = "plone-volto" },
+    { name = "products-cmfplone" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a4/92/3d0aa8dc84d6c26b67c77b2f04d1684bdd5d26ace0e71a510d8d3f61eb56/plonegovbr_socialmedia-3.0.0a0.tar.gz", hash = "sha256:de79336f51bd98e4ee56d710da6f4165ff1883b05b1f597b919562555c59cfa4", size = 33919, upload-time = "2025-11-11T16:56:51.761Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/dd/f6/79b4794cd76093ebf66211413df33394cf697cb74a5a86cb2adea81d185c/plonegovbr_socialmedia-3.0.0a0-py3-none-any.whl", hash = "sha256:646b7d50059daceb9704d9ac58927b0d866620078d84bd3ec60190df44daee16", size = 44149, upload-time = "2025-11-11T16:56:50.515Z" },
+]
+
+[[package]]
 name = "plonetheme-barceloneta"
 version = "4.0.3"
 source = { registry = "https://pypi.org/simple" }
@@ -4778,9 +4810,11 @@ socks = [
 name = "v2tec-intranet"
 source = { editable = "." }
 dependencies = [
+    { name = "kitconcept-voltolighttheme" },
     { name = "plone-api" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
+    { name = "plonegovbr-socialmedia" },
     { name = "products-cmfplone" },
 ]
 
@@ -4802,9 +4836,11 @@ test = [
 
 [package.metadata]
 requires-dist = [
+    { name = "kitconcept-voltolighttheme", specifier = "==8.0.0a28" },
     { name = "plone-api" },
     { name = "plone-restapi" },
     { name = "plone-volto" },
+    { name = "plonegovbr-socialmedia", specifier = "==3.0.0a0" },
     { name = "products-cmfplone", specifier = "==6.2.0" },
 ]
 
