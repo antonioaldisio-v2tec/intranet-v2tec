@@ -93,7 +93,7 @@
         import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>
-    <genericsetup:upgradeSteps
+  <genericsetup:upgradeSteps
       profile="v2tec.intranet:default"
       source="20260608002"
       destination="20260609001"

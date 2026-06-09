@@ -6,4 +6,10 @@
       handler=".area.area_added"
       />
 
+  <subscriber
+      for="v2tec.intranet.content.area.IArea
+           zope.lifecycleevent.IObjectModifiedEvent"
+      handler=".area.area_modified"
+      />
+
 </configure>

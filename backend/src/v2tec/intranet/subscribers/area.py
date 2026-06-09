@@ -3,13 +3,17 @@ from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
 from v2tec.intranet.content.area import Area
 
 
-def area_added(obj: Area, event) -> None:
-    """Ações executadas ao adicionar uma Área."""
+def _update_exclude_from_navigation(obj: Area) -> None:
     behavior = IExcludeFromNavigation(obj)
     if obj.description:
         behavior.exclude_from_nav = False
     else:
         behavior.exclude_from_nav = True
+
+
+def area_added(obj: Area, event) -> None:
+    """Ações executadas ao adicionar uma Área."""
+    _update_exclude_from_navigation(obj)
 
     groupname = f"{obj.getId()}-editores"
     api.group.create(
@@ -22,3 +26,8 @@ def area_added(obj: Area, event) -> None:
         roles=["Editor"],
         obj=obj,
     )
+
+
+def area_modified(obj: Area, event) -> None:
+    """Ações executadas ao modificar uma Área."""
+    _update_exclude_from_navigation(obj)

@@ -1,9 +1,10 @@
-import transaction
-
 from plone import api
 from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
 
 import pytest
+import transaction
 
 
 CONTENT_TYPE = "Area"
@@ -41,7 +42,6 @@ class TestAreaSubscriber:
             behavior = IExcludeFromNavigation(area)
             assert behavior.exclude_from_nav is exclude_from_nav
 
-
     def test_cria_grupo_editores(self):
         """Área criada deve ter um grupo de editores com papel Editor local."""
         with api.env.adopt_roles(["Manager"]):
@@ -62,6 +62,36 @@ class TestAreaSubscriber:
                 inherit=False,
             )
             assert "Editor" in roles
+
+    @pytest.mark.parametrize(
+        "initial_description,new_description,exclude_from_nav",
+        [
+            ["Área responsável por TI", "", True],
+            ["Área responsável por TI", None, True],
+            ["", "Área com nova descrição", False],
+            [None, "Área com nova descrição", False],
+        ],
+    )
+    def test_exclude_from_navigation_on_modify(
+        self,
+        initial_description: str | None,
+        new_description: str | None,
+        exclude_from_nav: bool,
+    ):
+        """Área modificada atualiza exclusão da navegação conforme description."""
+        with api.env.adopt_roles(["Manager"]):
+            kwargs = {
+                "type": CONTENT_TYPE,
+                "id": "area-modify",
+                "title": "Área de Teste",
+            }
+            if initial_description is not None:
+                kwargs["description"] = initial_description
+            area = api.content.create(container=self.portal, **kwargs)
+            area.description = new_description
+            notify(ObjectModifiedEvent(area))
+            behavior = IExcludeFromNavigation(area)
+            assert behavior.exclude_from_nav is exclude_from_nav
 
 
 class TestAreaSubscriberFunctional:
