@@ -14,4 +14,9 @@
       component=".areas.vocab_areas"
       />
 
+  <utility
+      name="v2tec.intranet.vocabulary.localidades"
+      component=".localidades.vocab_localidades"
+      />
+
 </configure>
