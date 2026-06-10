@@ -1,10 +1,30 @@
 import type { ConfigType } from '@plone/registry';
-import SearchBlockViewWithPageSize from 'volto-v2tec-intranet/components/Search/SearchBlockViewWithPageSize';
+import type { BlockConfigBase } from '@plone/types';
+import AreaGridItem from 'volto-v2tec-intranet/components/Blocks/Grid/AreaGridItem';
+import ClimaBlockInfo from 'volto-v2tec-intranet/components/Blocks/Clima';
+
+declare module '@plone/types' {
+  // Altera a interface BlocksConfigData para incluir o bloco de Clima
+  export interface BlocksConfigData {
+    climaBlock: BlockConfigBase;
+  }
+}
+
+function installLocalBlocks(config: ConfigType) {
+  // Instala o bloco de Clima
+  config.blocks.blocksConfig.climaBlock = ClimaBlockInfo;
+  return config;
+}
 
 export default function install(config: ConfigType) {
-  const searchBlock = config.blocks.blocksConfig.search;
-  if (searchBlock) {
-    searchBlock.view = SearchBlockViewWithPageSize;
-  }
+  // Registra todos os blocos criados nesse pacote
+  installLocalBlocks(config);
+
+  // Registra Componente para exibir uma Área quando a listagem for de Grade
+  config.registerComponent({
+    name: 'GridListingItemTemplate',
+    component: AreaGridItem,
+    dependencies: 'Area',
+  });
   return config;
 }
